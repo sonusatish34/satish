@@ -1,26 +1,14 @@
 import './App.css';
+import { useState } from 'react';
 
 
-
-const Person = (props) => {
-  return (
-    <div>
-    <h1>Name :{props.name}</h1>
-    <h2>Age :{props.age}</h2>
-    <h3>Gender :{props.gender }</h3>
-
-  </div>
-  );
-}
-
-const App = (props)=> {
+const App = () => {
+  const [counter, setCounter] = useState(0);
   return (
   <div className='App'>
-  
-    <Person name='satish' age='22' gender='M'> </Person>
-    <Person name='sumith' age='20' gender='M'> </Person>
-    <Person name='sumalatha' age='36' gender='F'> </Person>
-    <Person name='saibaba' age='46' gender='M'> </Person>
+      <button  onClick={()=>{setCounter((prevCount)=>prevCount - 1)}}>-</button>
+      <h1>{ counter}</h1>
+      <button onClick={()=>{setCounter((prevCount)=>prevCount + 1)}}>+</button>
   </div>  
   );
 }
